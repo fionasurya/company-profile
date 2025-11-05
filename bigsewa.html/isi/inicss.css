@@ -1,0 +1,456 @@
+/* ---------- Basic / layout ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  background: #0f0f0f;
+  color: #fff;
+  overflow: hidden; /* overall no page scroll */
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: #111;
+  z-index: 50;
+}
+
+.logo {
+  color: #ff4fc0;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.navbar {
+  list-style: none;
+  display: flex;
+  gap: 18px;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.navbar a:hover {
+  color: #ff4fc0;
+}
+
+/* ---------- Sections = single-screen slides ---------- */
+section {
+  display: none;
+  height: 100vh;
+  text-align: center;
+}
+
+section.active {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* ✅ ini bikin konten pas di tengah */
+}
+
+
+/* ---------- Hero / beranda ---------- */
+.home-content h1 {
+  font-size: 42px;
+  color: #ff4fc0;
+  margin-bottom: 8px;
+}
+
+.home-content p {
+  color: #ddd;
+  margin-bottom: 18px;
+}
+
+/* ---------- Buttons ---------- */
+.btn-pink,
+.btn-sewa,
+.btn-back {
+  display: inline-block;
+  background: #ff7fbf;
+  color: #fff;
+  padding: 10px 22px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.btn-pink:hover,
+.btn-sewa:hover,
+.btn-back:hover {
+  transform: scale(1.03);
+  background: #ff4fbf;
+}
+
+/* ---------- Price List Section ---------- */
+.price-scroll {
+  height: 100vh;
+  overflow-y: auto;
+  background: #0f0f0f; /* 🖤 hitam pekat agar selaras dengan tema utama */
+  color: white; /* teks tetap terlihat jelas */
+  padding: 60px 40px;
+  text-align: center;
+  animation: fadeIn 0.8s ease;
+}
+.price-scroll h2 {
+  color: #ff4fa3;
+  font-size: 28px;
+  margin-bottom: 6px;
+}
+
+.price-scroll .subtext {
+  color: #ccc; /* ubah dikit biar kontras di background gelap */
+  margin-bottom: 22px;
+}
+
+.price-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.cart-container {
+  background: #111;
+  color: white;
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 600px;
+  margin: 40px auto;
+  box-shadow: 0 0 15px rgba(255, 0, 100, 0.4);
+}
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 12px 0;
+  padding: 10px;
+  background: #1a1a1a;
+  border-radius: 10px;
+}
+.cart-summary {
+  margin-top: 30px;
+  text-align: center;
+}
+.btn-clear {
+  background: #ff5c5c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 15px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+.btn-clear:hover {
+  background: #ff2e2e;
+}
+.empty-cart {
+  text-align: center;
+  opacity: 0.8;
+}
+
+/* ---------- Kartu harga ---------- */
+.price-card {
+  background: #1e1e1e; /* abu gelap biar lembut dan elegan */
+  border-radius: 16px;
+  padding: 12px;
+  box-shadow: 0 6px 18px rgba(255, 128, 179, 0.18);
+  transition: all 0.22s;
+}
+
+.price-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(255, 128, 179, 0.3);
+}
+
+.price-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+
+.price-card h3 {
+  color: #ff4fa3;
+  margin-bottom: 6px;
+  font-size: 1.05rem;
+}
+
+.price-card p {
+  color: #ddd;
+  font-weight: 600;
+}
+
+/* ---------- Tombol kembali ---------- */
+.btn-back {
+  margin: 28px auto 0;
+  display: block;
+  background: #ff7fbf;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 20px;
+}
+
+
+/* ---------- Fade animation ---------- */
+.fade-in {
+  animation: fadeIn 0.45s ease both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---------- Gallery small ---------- */
+.gallery {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+.gallery img {
+  width: 220px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* ---------- Responsive tweak ---------- */
+@media (max-width: 640px) {
+  .navbar {
+    gap: 10px;
+    font-size: 14px;
+  }
+
+  .home-content h1 {
+    font-size: 30px;
+  }
+
+  .price-card img {
+    height: 120px;
+  }
+
+  .price-container {
+    gap: 12px;
+  }
+
+  header {
+    padding: 12px 16px;
+  }
+}
+
+.filter-menu {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.filter-btn {
+  padding: 8px 16px;
+  background: #222;
+  color: #ff4fa3;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: #ff4fa3;
+  color: #111;
+}
+
+/* Section Pengembang */
+#pengembang {
+  padding: 60px 40px;
+  text-align: center;
+  background: #0f0f0f;
+  color: #fff;
+}
+
+#pengembang h2 {
+  color: #ff4fa3;
+  font-size: 28px;
+  margin-bottom: 6px;
+}
+
+#pengembang .subtext {
+  color: #ccc;
+  margin-bottom: 30px;
+}
+
+/* Container cards */
+.developer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Card individual */
+.developer-card {
+  background: #1e1e1e;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 6px 18px rgba(255, 128, 179, 0.18);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.developer-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(255, 79, 163, 0.4);
+}
+
+.developer-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.developer-card h3 {
+  color: #ff4fa3;
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+}
+
+/* Tombol portofolio */
+.btn-portfolio {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #ff7fbf;
+  color: #fff;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn-portfolio:hover {
+  background: #e63f90;
+}
+
+#contact-form input,
+#contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 12px;
+  border: none;
+  background: #1e1e1e;
+  color: #fff;
+}
+
+#contact-form button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  background: #ff7fbf;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#contact-form button:hover {
+  background: #e63f90;
+}
+
+
+/* ---------- ABOUT SECTION ---------- */
+.about-section {
+  background: #0f0f0f;
+  color: #fff;
+  padding: 80px 40px;
+  animation: fadeIn 0.8s ease;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 50px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.about-image img {
+  max-width: 100%;
+  width: 340px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(255, 128, 179, 0.25);
+  transition: 0.3s ease;
+}
+
+.about-image img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 30px rgba(255, 128, 179, 0.35);
+}
+
+.about-content {
+  flex: 1 1 420px;
+}
+
+.about-content h2 {
+  font-size: 30px;
+  color: #ff4fa3;
+  margin-bottom: 16px;
+}
+
+.about-content h2 span {
+  color: #fff;
+  text-shadow: 0 0 8px rgba(255, 79, 163, 0.5);
+}
+
+.about-content p {
+  color: #ddd;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-image img {
+    width: 100%;
+    max-width: 360px;
+  }
+}
