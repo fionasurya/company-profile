@@ -1,26 +1,32 @@
+<!--FIIIIIIIIIOOOOONNNNNNNAAAAAAAA-->
 <!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
   <title>BIG SEWA - Persewaan Blitar</title>
 
   <!-- FONT GOOGLE -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
 
+
   <!-- CSS -->
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="isi/inicss.css" />
 </head>
+
 
 <body>
   <header>
-    <div class="logo">BIG SEWA</div>
+ <a href="#" class="logo">
+  <img src="isi/logo.jpg" alt="Logo BIG SEWA">
+</a>
+
     <nav>
       <ul class="navbar">
-        <li><a href="#keranjang" class="cart-link">🛒 <span id="cart-count">0</span></a></li>
         <li><a href="#beranda" data-target="beranda">Beranda</a></li>
         <li><a href="#tentang" data-target="tentang">Tentang Kami</a></li>
-        <li><a href="#galeri" data-target="galeri">Galeri</a></li>
+        <li><a href="#syarat" data-target="syarat">S&K</a></li>
         <li><a href="#kontak" data-target="kontak">Kontak</a></li>
         <li><a href="#pengembang" data-target="pengembang">Pengembang</a></li>
       </ul>
@@ -28,17 +34,17 @@
   </header>
 
   <!-- BERANDA -->
-<section id="beranda" class="active section">
+<section id="beranda" class="active section"> 
   <div class="section-inner home-content">
     <h1>BIG SEWA</h1>
     <p>Jasa penyewaan perlengkapan outdoor & piknik estetik</p>
-    <button class="btn-pink" id="lihat-price">Lihat Price List</button>
+    <button class="btn-pink" id="lihat-price">Lihat Price List</button> 
   </div>
 </section>
 
 
   <!-- PRICE LIST (dengan tombol Tambah ke Keranjang) -->
-<section id="price-list" class="section">
+<section id="price-list" class="section"> 
   <div class="price-scroll">
     <h2>Daftar Harga BIG SEWA</h2>
     <p class="subtext">
@@ -46,13 +52,32 @@
       Perlengkapan lengkap dengan harga hemat dan layanan ramah hanya di Blitar.
     </p>
 
+
+    <!-- Tombol Keranjang di dalam halaman Price List -->
+    <div style="text-align:center; margin-top:20px;"> 
+      <button id="cart-toggle-btn" class="btn-pink">🛒 Lihat Keranjang</button>
+    </div>
+
+
+    <!-- KERANJANG BELANJA (awalnya tersembunyi) -->
+    <div id="cart-section" style="display:none; margin-top:40px;">
+      <h2 style="text-align:center; color:#6ca9db;">🛍️ Keranjang Belanja</h2>
+      <div id="cart-items" class="cart-container"></div>
+      <h3 id="total-price" style="text-align:center; color:white; margin-top:10px;">Total: Rp0</h3>
+      <div style="text-align:center; margin-top:20px;">
+        <button id="whatsapp-btn" class="btn-pink">Kirim Pesanan via WhatsApp</button>
+      </div>
+    </div>
+
+
     <!-- Filter Menu -->
-    <div class="filter-menu">
-      <button class="filter-btn active" data-category="satuan">Satuan</button>
+    <div class="filter-menu">  <!--agar tampilan berjajar rapi-->
+      <button class="filter-btn active" data-category="satuan">Satuan</button> 
       <button class="filter-btn" data-category="asoy">Asoy Pack</button>
       <button class="filter-btn" data-category="uhuy">Uhuy Pack</button>
       <button class="filter-btn" data-category="lensa">Lensa Apexel</button>
     </div>
+
 
     <!-- ==================== PRODUK SATUAN ==================== -->
     <div class="price-container">
@@ -127,122 +152,99 @@
       </div>
     </div>
 
-  
-    <!-- ASOY PACK -->
-<div class="price-container">
-  <div class="price-card" data-category="asoy">
-  <img src="isi/asoy1.jpg" alt="Asoy1">
-  <h3>Asoy1</h3>
-  <p>Rp22.000</p>
-  <p>Isi: 2 Kursi Lipat + 1 Meja Lipat / Tripod</p>
- <button class="btn-pink add-to-cart" data-name="Asoy1" data-price="22.000">Tambah ke Keranjang
-  </button>
-</div>
 
-<div class="price-card" data-category="asoy">
-  <img src="isi/asoy2.jpg" alt="Asoy2">
-  <h3>Asoy2</h3>
-  <p>Rp30.000</p>
-  <p>Isi: 2 Kursi Lipat + 1 Meja Lipat + 1 Tripod</p>
-  <button class="add-to-cart" data-name="Asoy2" data-price="30000">
-    Tambah ke Keranjang
-  </button>
-</div>
+    <!-- ==================== ASOY PACK ==================== -->
+    <div class="price-container">
+      <div class="price-card" data-category="asoy">
+        <img src="isi/asoy1.jpg" alt="Asoy1">
+        <h3>Asoy1</h3>
+        <p>Rp22.000</p>
+        <p>Isi: 2 Kursi Lipat + 1 Meja Lipat / Tripod</p>
+        <button class="btn-pink add-to-cart" data-name="Asoy1" data-price="22000">Tambah ke Keranjang</button>
+      </div>
 
-<div class="price-card" data-category="asoy">
-  <img src="isi/asoy3.jpg" alt="Asoy3">
-  <h3>Asoy3</h3>
-  <p>Rp45.000</p>
-  <p>Isi: 4 Kursi Lipat + 1 Meja Lipat + 1 Tripod</p>
-  <button class="add-to-cart" data-name="Asoy3" data-price="45000">
-    Tambah ke Keranjang
-  </button>
-</div>
+      <div class="price-card" data-category="asoy">
+        <img src="isi/asoy2.jpg" alt="Asoy2">
+        <h3>Asoy2</h3>
+        <p>Rp30.000</p>
+        <p>Isi: 2 Kursi Lipat + 1 Meja Lipat + 1 Tripod</p>
+        <button class="btn-pink add-to-cart" data-name="Asoy2" data-price="30000">Tambah ke Keranjang</button>
+      </div>
 
-<div class="price-card" data-category="asoy">
-  <img src="isi/asoy4.jpg" alt="Asoy4">
-  <h3>Asoy4</h3>
-  <p>Rp26.000</p>
-  <p>Isi: 1 Kompor portable + 1 Teflon + 1 Gas refil</p>
-  <button class="add-to-cart" data-name="Asoy4" data-price="60000">
-    Tambah ke Keranjang
-  </button>
-</div>
+      <div class="price-card" data-category="asoy">
+        <img src="isi/asoy3.jpg" alt="Asoy3">
+        <h3>Asoy3</h3>
+        <p>Rp45.000</p>
+        <p>Isi: 4 Kursi Lipat + 1 Meja Lipat + 1 Tripod</p>
+        <button class="btn-pink add-to-cart" data-name="Asoy3" data-price="45000">Tambah ke Keranjang</button>
+      </div>
 
-<div class="price-card" data-category="asoy">
-  <img src="isi/asoy55.jpg" alt="Asoy5">
-  <h3>Asoy5</h3>
-  <p>Rp35.000</p>
-  <p>Isi: 1 Kompor portable + 1 Teflon + 1 Gas refil + 1 Tripodc</p>
-  <button class="add-to-cart" data-name="Asoy5" data-price="75000">
-    Tambah ke Keranjang
-  </button>
-</div>
+      <div class="price-card" data-category="asoy">
+        <img src="isi/asoy4.jpg" alt="Asoy4">
+        <h3>Asoy4</h3>
+        <p>Rp26.000</p>
+        <p>Isi: 1 Kompor portable + 1 Teflon + 1 Gas Refill</p>
+        <button class="btn-pink add-to-cart" data-name="Asoy4" data-price="26000">Tambah ke Keranjang</button>
+      </div>
 
-<div class="price-card" data-category="asoy">
-  <img src="isi/asoy7.jpg" alt="Asoy5">
-  <h3>asoy7</h3>
-  <p>Rp35.000</p>
-  <p>Isi: 1 Tikar + 1 bunga kering + 1 keranjang rotan + 1 Tripod</p>
-  <button class="add-to-cart" data-name="Asoy5" data-price="75000">
-    Tambah ke Keranjang
-  </button>
-</div>
+      <div class="price-card" data-category="asoy">
+        <img src="isi/asoy55.jpg" alt="Asoy5">
+        <h3>Asoy5</h3>
+        <p>Rp35.000</p>
+        <p>Isi: 1 Kompor portable + 1 Teflon + 1 Gas Refill + 1 Tripod</p>
+        <button class="btn-pink add-to-cart" data-name="Asoy5" data-price="35000">Tambah ke Keranjang</button>
+      </div>
 
-<div class="price-card" data-category="asoy">
-  <img src="isi/asoy5.jpg" alt="Asoy6">
-  <h3>Asoy6</h3>
-  <p>Rp45.000</p>
-  <p>Isi: 1 Kompor portable + 1 Teflon + 1 Gas refil +1 Tikar 200 x 150 + 1 Tripod</p>
-  <button class="add-to-cart" data-name="Asoy6" data-price="90000">
-    Tambah ke Keranjang
-  </button>
-</div>
+      <div class="price-card" data-category="asoy">
+        <img src="isi/asoy7.jpg" alt="Asoy6">
+        <h3>Asoy6</h3>
+        <p>Rp35.000</p>
+        <p>Isi: 1 Tikar + 1 Bunga Kering + 1 Keranjang Rotan + 1 Tripod</p>
+        <button class="btn-pink add-to-cart" data-name="Asoy6" data-price="35000">Tambah ke Keranjang</button>
+      </div>
 
-<div class="price-card" data-category="asoy">
-  <img src="img/asoy7.png" alt="Asoy7">
-  <h3>Asoy7</h3>
-  <p>Rp35.000</p>
-  <p>Isi: 1 Tikar 200 x 150 + 1 Bunga Kering + 1 Keranjang Rotan + 1 Tripod</p>
-  <button class="add-to-cart" data-name="Asoy7" data-price="120000">
-    Tambah ke Keranjang
-  </button>
-</div>
+      <div class="price-card" data-category="asoy">
+        <img src="isi/asoy5.jpg" alt="Asoy7">
+        <h3>Asoy7</h3>
+        <p>Rp45.000</p>
+        <p>Isi: 1 Kompor portable + 1 Teflon + 1 Gas Refill + 1 Tikar 200x150 + 1 Tripod</p>
+        <button class="btn-pink add-to-cart" data-name="Asoy7" data-price="45000">Tambah ke Keranjang</button>
+      </div>
+    </div>
+
 
     <!-- ==================== UHUY PACK ==================== -->
+    <div class="price-container">
+      <div class="price-card" data-category="uhuy">
+        <img src="isi/uhuy1.jpg" alt="Uhuy1">
+        <h3>Uhuy1</h3>
+        <p>Rp15.000</p>
+        <p>Isi: 1 Kursi Lipat + 1 Meja Lipat / Tripod</p>
+        <button class="btn-pink add-to-cart" data-name="Uhuy1" data-price="15000">Tambah ke Keranjang</button>
+      </div>
 
-    <div class="price-card" data-category="uhuy">
-  <img src="isi/uhuy1.jpg" alt="Uhuy1">
-  <h3>Uhuy1</h3>
-  <p>Rp15.000</p>
-  <p>Isi: Isi: 1 Kursi Lipat + 1 Meja Lipat / Tripod</p>
-  <button class="add-to-cart" data-name="Uhuy1" data-price="55000">
-    Tambah ke Keranjang
-  </button>
-</div>
+      <div class="price-card" data-category="uhuy">
+        <img src="isi/uhuy2.jpg" alt="Uhuy2">
+        <h3>Uhuy2</h3>
+        <p>Rp13.000</p>
+        <p>Isi: 1 Tikar + 1 Tripod</p>
+        <button class="btn-pink add-to-cart" data-name="Uhuy2" data-price="13000">Tambah ke Keranjang</button>
+      </div>
+    </div>
 
-<div class="price-card" data-category="uhuy">
-  <img src="isi/uhuy2.jpg" alt="Uhuy1">
-  <h3>Uhuy2</h3>
-  <p>Rp13.000</p>
-  <p>Isi: 1 Tikar + 1 Tripod</p>
-  <button class="add-to-cart" data-name="Uhuy1" data-price="55000">
-    Tambah ke Keranjang
-  </button>
-</div>
-  
+
     <!-- ==================== LENSA ==================== -->
     <div class="price-container">
       <div class="price-card" data-category="lensa">
-        <img src="isi/lensa.jpg" alt="Lensa Apexell 18 • 25">
-        <h3>Lensa Apexell 18 • 25</h3>
+        <img src="isi/lensa.jpg" alt="Lensa Apexell 18•25">
+        <h3>Lensa Apexell 18•25</h3>
         <p>Rp15.000</p>
         <button class="btn-pink add-to-cart" data-name="Lensa Apexell 18•25" data-price="15000">Tambah ke Keranjang</button>
       </div>
 
       <div class="price-card" data-category="lensa">
-        <img src="isi/lensa+tripod.jpg" alt="Lensa Apexell 18 • 25 + Tripod">
-        <h3>Lensa Apexell 18 • 25 + Tripod</h3>
+        <img src="isi/lensa+tripod.jpg" alt="Lensa Apexell 18•25 + Tripod">
+        <h3>Lensa Apexell 18•25 + Tripod</h3>
         <p>Rp20.000</p>
         <button class="btn-pink add-to-cart" data-name="Lensa + Tripod" data-price="20000">Tambah ke Keranjang</button>
       </div>
@@ -250,22 +252,21 @@
   </div>
 </section>
 
-
   <!-- TENTANG -->
 <section id="tentang" class="section about-section fade-in">
   <div class="about-container">
     <div class="about-image">
-      <img src="library/profile22.jpg" alt="BIG SEWA Piknik Estetik">
+      <img src="isi/tentangkami.jpg" alt="BIG SEWA Piknik Estetik">
     </div>
     <div class="about-content">
       <h2>✨ Tentang <span>BIG SEWA</span></h2>
       <p>
-        <strong>BIG SEWA</strong> hadir untuk kamu yang ingin piknik estetik tanpa repot!  
-        Kami menyediakan berbagai perlengkapan seperti <strong>meja lipat</strong>, <strong>kursi lipat</strong>, <strong>grill set</strong>, 
+        <strong>BIG SEWA</strong> hadir untuk  kamu yang ingin piknik estetik tanpa repot!  
+        Kami menyediakan berbagai perlengkapan seperti <strong>meja lipat</strong>, <strong>kursi lipat</strong>, <strong>grill set</strong>,
         hingga <strong>lensa Apexel</strong> untuk fotografi.  
       </p>
       <p>
-        Dengan konsep <em>“Turn Moments into Memories”</em>, BIG SEWA membantu kamu menciptakan 
+        Dengan konsep <em>“Turn Moments into Memories”</em>, BIG SEWA membantu kamu menciptakan
         <strong>momen berkesan</strong> bersama orang tersayang.  
         Semua perlengkapan berkualitas, harga terjangkau, dan layanan ramah — khusus untuk kamu yang ada di <strong>Blitar</strong> 🌸
       </p>
@@ -273,102 +274,106 @@
   </div>
 </section>
 
-  <!-- GALERI -->
-  <section id="galeri" class="section">
-    <div class="section-inner">
-      <h2>Galeri</h2>
-      <p>Beberapa momen dan produk kami yang siap mempercantik acaramu.</p>
-      <div class="gallery">
-        <img src="https://picsum.photos/300/200?random=10" alt="">
-        <img src="https://picsum.photos/300/200?random=11" alt="">
-        <img src="https://picsum.photos/300/200?random=12" alt="">
-      </div>
-    </div>
-  </section>
+
+<!--lIIIIIIIIIIISSSSSSSSSSSSSAAAAAAAAAAAAAAAAA-->
+  <!-- S&K BIG.SEWA -->
+<section id="syarat" class="section">
+  <div class="section-inner">
+    <h2>S&K BIG.SEWA</h2>
+    <ul class="snk-list">
+      <li>📌 Jaminan Kartu Identitas KTP / SIM / KK / KARTU PELAJAR AKTIF
+        <br><small>(Tanpa jaminan identitas bisa menggunakan deposit uang seharga barang x2, tanpa identitas ada biaya charge)</small>
+      </li>
+      <li>🕐 Harga berdurasi 1x24 Jam</li>
+      <li>⚠️ Kehilangan / Kerusakan tanggung jawab penyewa</li>
+      <li>⏰ Overtime = 10K / Jam</li>
+      <li>📅 Keep maksimal 3 hari sebelum sewa / DP 50%</li>
+      <li>❌ Cancel = DP hangus</li>
+      <li>⏳ Toleransi keterlambatan pengembalian 1 jam</li>
+      <li>🏠 Take at Home</li>
+      <li>💵 Pembayaran bisa via cash / TF (BRI, BCA, Dana, Ovo, Link Aja, Shopee)</li>
+      <li>🎁 Khusus pembelian paket akan mendapatkan <strong>member card</strong></li>
+    </ul>
+  </div>
+</section>
+
 
   <!-- KONTAK -->
-  <section id="kontak" class="section">
-    <div class="section-inner">
-      <h2>📩 Kontak Kami</h2>
-      <p class="subtext">Hubungi kami kirim pesan langsung lewat form di bawah ini.</p>
-      <a href="https://wa.me/6285745565042" target="_blank" class="btn-whatsapp">
-      
-      <form id="contact-form">
-      <input type="text" name="name" placeholder="Nama Kamu" required>
-      <textarea name="message" placeholder="Pesanmu..." required></textarea>
-      <button type="submit">Kirim via WhatsApp</button>
-      </form>
+<section id="kontak" class="section">
+  <div class="section-inner">
+    <h2>📍 Hubungi Kami</h2>
+    <p class="subtext">Terhubung dengan kami lebih mudah melalui peta dan media sosial berikut.</p>
 
+
+      <div class="contact-wrapper">
+      <!-- MAP -->
+      <div class="map-card">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.848647630634!2d112.21128809999999!3d-8.0145395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e78f358f29d5e3b%3A0x2e293494d1782efd!2sHayybig%20manik%20manik!5e0!3m2!1sen!2sid!4v1762694650003!5m2!1sen!2sid"
+          width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+
+
+      <!-- SOCIAL LINKS -->
+      <div class="contact-buttons">
+        <a href="https://wa.me/6285745565042" target="_blank" class="contact-btn wa">
+          <i class="fab fa-whatsapp"></i> Chat via WhatsApp
+        </a>
+        <a href="https://www.instagram.com/big.sewa" target="_blank" class="contact-btn ig">
+          <i class="fab fa-instagram"></i> Lihat Instagram
+        </a>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- PENGEMBANG -->
- <!-- PENGEMBANG SECTION -->
+ <!-- PENGEMBANG -->
 <section id="pengembang" class="section">
-  <h2>👩‍💻 Tim Pengembang</h2>
-  <p class="subtext">Para pengembang keren yang membuat website ini. Klik tombol untuk melihat portofolio mereka!</p>
-
-  <div class="developer-container">
-    <!-- Card 1 -->
-    <div class="developer-card">
-      <img src="https://fionasurya.github.io/portofolio-fio/" alt="Lisa Fitri Oktafiana">
-      <h3>Lisa Fitri Oktafiana</h3>
-      <a href="https://lisafitrioktafiana.github.io/portofilio-Lisa/" target="_blank" class="btn-portfolio">Lihat Portofolio</a>
-    </div>
-
-    <!-- Card 2 -->
-    <div class="developer-card">
-      <img src="https://picsum.photos/300/300?random=12" alt="Fiona Surya Suci Ramadhani">
-      <h3>Fiona Surya Suci Ramadhani</h3>
-      <a href="https://fiona-portfolio.com" target="_blank" class="btn-portfolio">Lihat Portofolio</a>
-    </div>
-  </div>
-</section>
-
-<!-- 🛒 KERANJANG BELANJA -->
-<section id="cart" class="section">
   <div class="section-inner">
-    <h2 style="text-align:center; color:#ff8ccf;">🛍️ Keranjang Belanja</h2>
+    <h2>👩‍💻 Tim Pengembang</h2>
+    <p class="subtext">
+      Kami adalah tim pengembang website BIG SEWA, terdiri dari dua pelajar SMKN 1 NGLEGOK.<br>
+      Kami bersemangat menciptakan pengalaman online yang menarik dan fungsional untuk BIG SEWA.
+    </p>
 
-    <!-- daftar pesanan -->
-    <div id="cart-items" class="cart-container"></div>
 
-    <!-- total harga -->
-    <h3 id="total-price" style="text-align:center; color:white; margin-top:10px;">Total: Rp0</h3>
+    <div class="developer-grid">
+      <!-- Card 1 -->
+      <div class="neon-card">
+        <div class="card-content">
+          <h3>🌀 Lisa Fitri<br>Oktafiana 🌀</h3>
+          <p> 📍SMKN 1 NGLEGOK</p>
+          <a
+            href="https://lisafitrioktafiana.github.io/portofilio-Lisa/"
+            target="_blank"
+            class="neon-btn"
+          >
+            🔗 Lihat Portofolio
+          </a>
+        </div>
+      </div>
 
-    <!-- tombol aksi -->
-    <div style="text-align:center; margin-top:20px;">
-      <button id="whatsapp-btn" class="btn-pink">Kirim Pesanan via WhatsApp</button>
-      <button id="back-to-products" class="btn-pink" style="margin-left:10px;">Kembali ke Produk</button>
-    </div>
-  </div>
+      <!-- Card 2 -->
+      <div class="neon-card">
+        <div class="card-content">
+          <h3>🌀 Fiona Surya Suci Ramadhani 🌀</h3>
+          <p> 📍 SMKN 1 NGLEGOK</p>
+          <a
+            href="https://fionasurya.github.io/portofolio-fio/"
+            target="_blank"
+            class="neon-btn"
+          >
+            🔗 Lihat Portofolio
+          </a>
+        </div>
+      </div>
+    </div> <!-- end .developer-grid -->
+  </div> <!-- end .section-inner -->
 </section>
-
-</section>
-<section id="cart" class="section" style="display: none;">
-  <div class="section-inner">
-    <h2 style="text-align:center; color:#ff8ccf;">🛍️ Keranjang Belanja</h2>
-    <div id="cart-items" class="cart-container"></div>
-    <h3 id="total-price" style="text-align:center; color:white; margin-top:10px;">Total: Rp0</h3>
-
-    <div style="text-align:center; margin-top:20px;">
-      <button id="whatsapp-btn" class="btn-pink">Kirim Pesanan via WhatsApp</button>
-      <button id="back-to-products" class="btn-pink" style="margin-left:10px;">Kembali ke Produk</button>
-    </div>
-  </div>
-</section>
-<div class="price-card" data-category="satuan">
-  <img src="isi/kursi-removebg-preview.png" alt="Kursi Lipat">
-  <h3>Kursi Lipat</h3>
-  <p>Rp8.000</p>
-  <button class="btn-pink add-to-cart" data-name="Kursi Lipat" data-price="8000">Tambah ke Keranjang</button>
-</div>
-
 
   <!-- JAVASCRIPT -->
-<script src="script.js"></script>
+<script src="isi/javascript.js"></script>
 
 </body>
 </html>
-
-
